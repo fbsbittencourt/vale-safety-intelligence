@@ -32,15 +32,15 @@ function App() {
       <div className="max-w-6xl mx-auto">
         <header className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
           <div>
-            <h1 className="text-3xl font-black text-slate-900 tracking-tighter uppercase italic">
-              Vale <span className="text-amber-500 not-italic">Safety</span>
+            <h1 className="text-3xl font-black tracking-tighter uppercase italic" style={{ color: '#00949B' }}>
+              Vale <span className="not-italic" style={{ color: '#E5B231' }}>Safety</span>
             </h1>
             <p className="text-slate-400 text-xs font-bold uppercase tracking-widest mt-1">Intelligence Dashboard</p>
           </div>
-          
-          <button 
+
+          <button
             onClick={() => setIsFormOpen(true)}
-            className="bg-slate-900 text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-slate-800 transition-all shadow-lg shadow-slate-200"
+            className="text-white px-6 py-3 rounded-xl font-bold flex items-center gap-2 hover:bg-slate-800 transition-all shadow-lg shadow-slate-200" style={{ backgroundColor: '#00949B' }}
           >
             <Plus size={20} /> Nova Análise
           </button>
@@ -51,19 +51,20 @@ function App() {
         </main>
 
         {/* MODAL DE CADASTRO */}
-        <AnalysisModal 
-          isOpen={isFormOpen} 
-          onClose={() => setIsFormOpen(false)} 
+        <AnalysisModal
+          isOpen={isFormOpen}
+          onClose={() => setIsFormOpen(false)}
           title="Novo Registro de Ocorrência"
         >
           <SafetyForm onSuccess={handleNewAnalysis} />
         </AnalysisModal>
 
         {/* MODAL DE DETALHES */}
-        <AnalysisModal 
-          isOpen={isDetailsOpen} 
-          onClose={() => setIsDetailsOpen(false)} 
+        <AnalysisModal
+          isOpen={isDetailsOpen}
+          onClose={() => setIsDetailsOpen(false)}
           title="Relatório Técnico de Segurança"
+          maxWidth="max-w-5xl"
         >
           <AnalysisDetails data={selectedAnalysis} />
         </AnalysisModal>
