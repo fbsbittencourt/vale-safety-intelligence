@@ -23,7 +23,7 @@ export default function SafetyForm({ onSuccess }) {
         setError(null);
 
         try {
-            const response = await axios.post('http://localhost:8000/analisar-seguranca', incidente);
+            const response = await axios.post('https://vale.tradediario.com.br/analisar-seguranca', incidente);
 
             // O backend retorna um JSON dentro de uma string na chave 'analise'
             const analiseProcessada = JSON.parse(response.data.analise);
